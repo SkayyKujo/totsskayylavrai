@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil - TOTS Ultimate</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images.ico" type="image/x-icon">
+  <link href="BRISTONE-DISPLAY.TTF" rel="stylesheet" type="font/ttf">
+</head>
+
+<body>
+
+  <h1>Temps restant jusqu'à 19h</h1>
+  <div id="timer">--:--:--</div>
+
+  <!-- Musique d'accueil -->
+  <audio id="background-music" loop>
+    <source src="joycrookes.mp3" type="audio/mpeg">
+    Ton navigateur ne supporte pas l'audio HTML5.
+  </audio>
+
+  <button id="toggle-music" onclick="toggleMusic()">▶ Musique</button>
+  <br><br>
+  <label for="volume-control">🔊 Volume :</label>
+  <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1" onchange="setVolume(this.value)">
+
+  <!-- Section Compteurs TOTS -->
+  <div class="player-container">
+    <div class="player-card">
+      <div class="player-name">Skayy</div>
+      <div id="counter-skayy" class="counter">0</div>
+      <div id="trophy-skayy" class="trophy">🏆</div>
+      <button class="btn" onclick="addTots('skayy')">+1 TOTS</button>
+    </div>
+    <div class="player-card">
+      <div class="player-name">Nayloxx</div>
+      <div id="counter-nayloxx" class="counter">0</div>
+      <div id="trophy-nayloxx" class="trophy">🏆</div>
+      <button class="btn" onclick="addTots('nayloxx')">+1 TOTS</button>
+    </div>
+    <div class="player-card">
+      <div class="player-name">Zartex</div>
+      <div id="counter-zartex" class="counter">0</div>
+      <div id="trophy-zartex" class="trophy">🏆</div>
+      <button class="btn" onclick="addTots('zartex')">+1 TOTS</button>
+    </div>
+  </div>
+
+  <button class="reset-btn" onclick="resetAll()">Reset tous les compteurs</button>
+  <br><br>
+  <a href="leaderboard.html" class="btn">Voir le Leaderboard 🏆</a>
+
+  <!-- Section Collection TOTS -->
+  <section id="collection-tots">
+    <h2>📚 Ma Collection TOTS</h2>
+    <div id="pack-counter">0 / 0 cartes packées</div>
+    <div class="collection-grid" id="cards-container"></div>
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
